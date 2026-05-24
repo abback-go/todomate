@@ -73,6 +73,20 @@ export default function App() {
     reloadTimer.current = setTimeout(() => { loadAll().catch(console.error); }, 120);
   }, [loadAll]);
 
+  // Self-heal a stale cached identity (e.g. the user row was deleted server-side):
+  // re-create it by name so foreign keys on new cards/comments stay valid.
+  useEffect(() => {
+    if (!isSupabaseConfigured || !me) return;
+    let cancelled = false;
+    db.findOrCreateUser(me.name).then((fresh) => {
+      if (!cancelled && fresh.id !== me.id) {
+        localStorage.setItem(ME_KEY, JSON.stringify(fresh));
+        setMe(fresh);
+      }
+    }).catch(console.error);
+    return () => { cancelled = true; };
+  }, [me]);
+
   // Initial load + realtime + presence (once we have an identity)
   useEffect(() => {
     if (!isSupabaseConfigured || !me) return;
