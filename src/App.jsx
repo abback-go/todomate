@@ -12,7 +12,6 @@ import { Drawer } from "./components/Drawer.jsx";
 import { JoinModal } from "./components/JoinModal.jsx";
 import { PasscodeGate } from "./components/PasscodeGate.jsx";
 
-const BOARD_NAME = "마케팅 캠페인 Q3";
 const ME_KEY = "todomate.me";
 const GATE_KEY = "todomate.unlocked";
 const PASSCODE = import.meta.env.VITE_BOARD_PASSCODE || "";
@@ -221,8 +220,7 @@ export default function App() {
         </div>
 
         <div className="topbar-board">
-          <span className="topbar-board-name">{BOARD_NAME}</span>
-          <span className="topbar-board-meta">· {cards.length}개의 작업</span>
+          <span className="topbar-board-meta">{cards.length}개의 작업</span>
         </div>
 
         <div className="topbar-spacer"></div>
