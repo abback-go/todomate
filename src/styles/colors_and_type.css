@@ -1,0 +1,252 @@
+/* ============================================================
+   Wanted Design System — Colors & Type
+   Source: Wanted Design System (Community) Figma file
+   Primary brand color: #0066FF (Blue 500)
+   Default font: Pretendard JP (Korean / English / Japanese)
+   ============================================================ */
+
+/* ------- Fonts: Pretendard Variable shipped locally; Wanted Sans from CDN. ------- */
+/* @import must precede all other statements (CSS spec), so it leads the file. */
+@import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/complete/WantedSansVariable.css");
+@font-face {
+  font-family: "Pretendard Variable";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/PretendardVariable.woff2") format("woff2-variations");
+}
+
+:root {
+  /* ---------- ATOMIC PALETTE (15-step ramps) ---------- */
+
+  /* Neutral / mono — anchors the entire UI */
+  --neutral-100: #FFFFFF;  --neutral-99:  #F7F7F8;  --neutral-98:  #F4F4F5;
+  --neutral-97:  #EAEBEC;  --neutral-96:  #E1E2E4;  --neutral-95:  #DBDCDF;
+  --neutral-90:  #C2C4C8;  --neutral-80:  #AEB0B6;  --neutral-70:  #989BA2;
+  --neutral-60:  #878A93;  --neutral-50:  #70737C;  --neutral-40:  #5A5C63;
+  --neutral-30:  #46474C;  --neutral-25:  #37383C;  --neutral-23:  #333438;
+  --neutral-22:  #2E2F33;  --neutral-20:  #292A2D;  --neutral-17:  #212225;
+  --neutral-15:  #1B1C1E;  --neutral-10:  #171719;  --neutral-7:   #141415;
+  --neutral-5:   #0F0F10;  --neutral-0:   #000000;
+
+  /* Blue — PRIMARY brand color */
+  --blue-99:  #F7FBFF;  --blue-95: #EAF2FE;  --blue-90: #C9DEFE;
+  --blue-80:  #9EC5FF;  --blue-70: #69A5FF;  --blue-60: #4F95FF;
+  --blue-50:  #3385FF;  --blue-40: #1A75FF;  --blue-30: #0066FF;
+  --blue-22:  #005EEB;  --blue-20: #0054D1;  --blue-15: #003E9C;
+  --blue-10:  #002966;  --blue-5:  #001536;
+
+  /* Red — destructive / negative */
+  --red-99: #FFFAFA;  --red-95: #FEECEC;  --red-90: #FED5D5;
+  --red-80: #FFB5B5;  --red-70: #FF8C8C;  --red-60: #FF6363;
+  --red-50: #FF4242;  --red-40: #E52222;  --red-30: #B20C0C;
+  --red-20: #750404;  --red-10: #3B0101;
+
+  /* Green — positive / success */
+  --green-99: #F2FFF6;  --green-95: #D9FFE6;  --green-90: #ACFCC7;
+  --green-80: #7DF5A5;  --green-70: #49E57D;  --green-60: #1ED45A;
+  --green-50: #00BF40;  --green-40: #009632;  --green-30: #006E25;
+  --green-20: #004517;  --green-10: #00240C;
+
+  /* Yellow — caution */
+  --yellow-99: #FFFCF7;  --yellow-95: #FEF4E6;  --yellow-90: #FEE6C6;
+  --yellow-80: #FFD49C;  --yellow-70: #FFC06E;  --yellow-60: #FFA938;
+  --yellow-50: #FF9200;  --yellow-46: #D47800;  --yellow-40: #D17600;
+  --yellow-30: #9C5800;  --yellow-20: #663A00;  --yellow-10: #361E00;
+
+  /* Orange — accent / hot */
+  --orange-99: #FFFAF7;  --orange-95: #FEEEE5;  --orange-90: #FEDBC6;
+  --orange-80: #FFC09C;  --orange-70: #FF9C63;  --orange-60: #FF7B2E;
+  --orange-50: #FF5E00;  --orange-45: #F55A00;  --orange-40: #CC4B00;
+  --orange-30: #943600;  --orange-20: #5C2200;  --orange-10: #2E1100;
+
+  /* Lime / Cyan / Sky / Violet / Purple / Pink (full atomic palette) */
+  --lime-50:   #58CF04;  --lime-40: #48AD00;
+  --cyan-50:   #28D0ED;  --cyan-40: #00BDDE;  --cyan-30: #0098B2;
+  --sky-50:    #3DC2FF;  --sky-40:  #00AEFF;  --sky-30:  #008DCF;
+  --violet-50: #7D5EF7;  --violet-40: #6541F2;  --violet-30: #5B37ED;
+  --purple-50: #D478FF;  --purple-40: #CB59FF;  --purple-30: #AD36E3;
+  --pink-50:   #FA73E3;  --pink-40:  #F553DA;   --pink-30:  #E846CD;
+
+  /* ---------- SEMANTIC TOKENS — LIGHT MODE ---------- */
+
+  /* Background — surface */
+  --background-normal-normal:    #FFFFFF;        /* page bg */
+  --background-normal-alternative:#F7F7F8;       /* secondary surface */
+  --background-elevated-normal:   #FFFFFF;       /* card / sheet */
+  --background-elevated-alternative:#F7F7F8;
+  --background-dimmer:            rgba(0,0,0,0.60); /* modal scrim */
+
+  /* Label — text */
+  --label-normal:        #1B1C1E;   /* primary text */
+  --label-strong:        #000000;   /* headings */
+  --label-neutral:       rgba(46,47,51,0.88);  /* body */
+  --label-alternative:   rgba(55,56,60,0.61);  /* secondary */
+  --label-assistive:     rgba(55,56,60,0.28);  /* hint / placeholder */
+  --label-disable:       rgba(55,56,60,0.16);
+  --static-white:        #FFFFFF;
+  --static-black:        #000000;
+
+  /* Line / border */
+  --line-normal-normal:        rgba(112,115,124,0.22);   /* hairline */
+  --line-normal-neutral:       rgba(112,115,124,0.16);
+  --line-normal-alternative:   rgba(112,115,124,0.08);
+  --line-solid-normal:         #C2C4C8;
+  --line-solid-neutral:        #DBDCDF;
+  --line-solid-alternative:    #EAEBEC;
+
+  /* Primary (Blue) */
+  --primary-normal:      #0066FF;
+  --primary-strong:      #005EEB;
+  --primary-heavy:       #0054D1;
+
+  /* Status colors */
+  --status-positive: #00BF40;
+  --status-cautionary: #FF9200;
+  --status-negative: #FF4242;
+
+  /* Accent (used sparingly) */
+  --accent-violet: #6541F2;
+  --accent-orange: #FF5E00;
+
+  /* Tinted backgrounds */
+  --tint-blue-bg:    #EAF2FE;
+  --tint-red-bg:     #FEECEC;
+  --tint-green-bg:   #D9FFE6;
+  --tint-yellow-bg:  #FEF4E6;
+  --tint-violet-bg:  #F0ECFE;
+  --tint-orange-bg:  #FEEEE5;
+
+  /* Interaction */
+  --interaction-inactive: rgba(112,115,124,0.22);
+  --interaction-disable:  rgba(112,115,124,0.08);
+
+  /* ---------- ELEVATION / SHADOWS ---------- */
+  --shadow-emphasize: 0 1px 4px rgba(0,0,0,0.08), 0 0 4px rgba(0,0,0,0.04);
+  --shadow-normal:    0 6px 14px rgba(23,23,23,0.07), 0 2px 4px rgba(23,23,23,0.06);
+  --shadow-strong:    0 12px 24px rgba(23,23,23,0.10), 0 4px 8px rgba(23,23,23,0.07);
+  --shadow-heavy:     0 20px 40px rgba(23,23,23,0.12), 0 8px 16px rgba(23,23,23,0.08);
+
+  /* ---------- RADII ---------- */
+  --radius-2:  2px;
+  --radius-4:  4px;
+  --radius-8:  8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-32: 32px;
+  --radius-pill: 9999px;
+
+  /* ---------- SPACING (4px grid) ---------- */
+  --space-2:  2px;   --space-4:  4px;   --space-6:  6px;
+  --space-8:  8px;   --space-12: 12px;  --space-16: 16px;
+  --space-20: 20px;  --space-24: 24px;  --space-32: 32px;
+  --space-40: 40px;  --space-48: 48px;  --space-64: 64px;
+  --space-80: 80px;  --space-96: 96px;  --space-128:128px;
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --font-sans: "Pretendard Variable", "Pretendard JP", "Pretendard", -apple-system, BlinkMacSystemFont,
+               "Apple SD Gothic Neo", system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Wanted Sans Variable", "Wanted Sans", "Pretendard Variable", sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  /* ---------- TYPE TOKENS (size / line / letter-spacing) ---------- *
+   * 7 groups × 18 sub-styles. Use the semantic class below.           */
+
+  /* Display */
+  --t-display1-size: 56px; --t-display1-lh: 1.25;  --t-display1-ls: -0.0286em;
+  --t-display2-size: 40px; --t-display2-lh: 1.30;  --t-display2-ls: -0.0282em;
+  --t-display3-size: 36px; --t-display3-lh: 1.334; --t-display3-ls: -0.027em;
+
+  /* Title */
+  --t-title1-size: 32px; --t-title1-lh: 1.375; --t-title1-ls: -0.0253em;
+  --t-title2-size: 28px; --t-title2-lh: 1.358; --t-title2-ls: -0.0236em;
+  --t-title3-size: 24px; --t-title3-lh: 1.334; --t-title3-ls: -0.023em;
+
+  /* Heading */
+  --t-heading1-size: 22px; --t-heading1-lh: 1.364; --t-heading1-ls: -0.0194em;
+  --t-heading2-size: 20px; --t-heading2-lh: 1.4;    --t-heading2-ls: -0.012em;
+
+  /* Headline */
+  --t-headline1-size: 18px; --t-headline1-lh: 1.445; --t-headline1-ls: -0.002em;
+  --t-headline2-size: 17px; --t-headline2-lh: 1.412; --t-headline2-ls: 0em;
+
+  /* Body */
+  --t-body1-size: 16px; --t-body1-lh: 1.5;   --t-body1-ls: 0.0057em;
+  --t-body1-reading-lh: 1.625;
+  --t-body2-size: 15px; --t-body2-lh: 1.467; --t-body2-ls: 0.0096em;
+  --t-body2-reading-lh: 1.6;
+
+  /* Label */
+  --t-label1-size: 14px; --t-label1-lh: 1.429; --t-label1-ls: 0.0145em;
+  --t-label1-reading-lh: 1.571;
+  --t-label2-size: 13px; --t-label2-lh: 1.385; --t-label2-ls: 0.0194em;
+
+  /* Caption */
+  --t-caption1-size: 12px; --t-caption1-lh: 1.334; --t-caption1-ls: 0.0252em;
+  --t-caption2-size: 11px; --t-caption2-lh: 1.273; --t-caption2-ls: 0.0311em;
+}
+
+/* ---------- DARK THEME OVERRIDES ---------- */
+[data-theme="dark"] {
+  --background-normal-normal:    #141415;
+  --background-normal-alternative:#1B1C1E;
+  --background-elevated-normal:   #212225;
+  --background-elevated-alternative:#292A2D;
+
+  --label-normal:      #F7F7F8;
+  --label-strong:      #FFFFFF;
+  --label-neutral:     rgba(247,247,248,0.88);
+  --label-alternative: rgba(247,247,248,0.61);
+  --label-assistive:   rgba(247,247,248,0.28);
+  --label-disable:     rgba(247,247,248,0.16);
+
+  --line-normal-normal:    rgba(174,176,182,0.22);
+  --line-normal-neutral:   rgba(174,176,182,0.16);
+  --line-normal-alternative:rgba(174,176,182,0.08);
+
+  --primary-normal: #3385FF;
+  --primary-strong: #4F95FF;
+  --primary-heavy:  #69A5FF;
+}
+
+/* ============================================================
+   GLOBAL DEFAULTS
+   ============================================================ */
+html, body {
+  font-family: var(--font-sans);
+  font-feature-settings: "ss06", "ss07";  /* nicer Hangul */
+  color: var(--label-normal);
+  background: var(--background-normal-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headings as semantic tokens */
+.t-display1, h1.t-display1 { font: 700 var(--t-display1-size)/var(--t-display1-lh) var(--font-sans); letter-spacing: var(--t-display1-ls); }
+.t-display2 { font: 700 var(--t-display2-size)/var(--t-display2-lh) var(--font-sans); letter-spacing: var(--t-display2-ls); }
+.t-display3 { font: 700 var(--t-display3-size)/var(--t-display3-lh) var(--font-sans); letter-spacing: var(--t-display3-ls); }
+.t-title1   { font: 700 var(--t-title1-size)/var(--t-title1-lh) var(--font-sans); letter-spacing: var(--t-title1-ls); }
+.t-title2   { font: 700 var(--t-title2-size)/var(--t-title2-lh) var(--font-sans); letter-spacing: var(--t-title2-ls); }
+.t-title3   { font: 700 var(--t-title3-size)/var(--t-title3-lh) var(--font-sans); letter-spacing: var(--t-title3-ls); }
+.t-heading1 { font: 600 var(--t-heading1-size)/var(--t-heading1-lh) var(--font-sans); letter-spacing: var(--t-heading1-ls); }
+.t-heading2 { font: 600 var(--t-heading2-size)/var(--t-heading2-lh) var(--font-sans); letter-spacing: var(--t-heading2-ls); }
+.t-headline1{ font: 600 var(--t-headline1-size)/var(--t-headline1-lh) var(--font-sans); letter-spacing: var(--t-headline1-ls); }
+.t-headline2{ font: 600 var(--t-headline2-size)/var(--t-headline2-lh) var(--font-sans); letter-spacing: var(--t-headline2-ls); }
+.t-body1    { font: 500 var(--t-body1-size)/var(--t-body1-lh) var(--font-sans); letter-spacing: var(--t-body1-ls); }
+.t-body1-reading { font: 500 var(--t-body1-size)/var(--t-body1-reading-lh) var(--font-sans); letter-spacing: var(--t-body1-ls); }
+.t-body2    { font: 500 var(--t-body2-size)/var(--t-body2-lh) var(--font-sans); letter-spacing: var(--t-body2-ls); }
+.t-label1   { font: 500 var(--t-label1-size)/var(--t-label1-lh) var(--font-sans); letter-spacing: var(--t-label1-ls); }
+.t-label2   { font: 600 var(--t-label2-size)/var(--t-label2-lh) var(--font-sans); letter-spacing: var(--t-label2-ls); }
+.t-caption1 { font: 500 var(--t-caption1-size)/var(--t-caption1-lh) var(--font-sans); letter-spacing: var(--t-caption1-ls); }
+.t-caption2 { font: 600 var(--t-caption2-size)/var(--t-caption2-lh) var(--font-sans); letter-spacing: var(--t-caption2-ls); }
+
+/* Display alt — Wanted Sans for huge marketing moments */
+.t-marketing-hero {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(48px, 6vw, 96px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
